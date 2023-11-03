@@ -1,0 +1,19 @@
+{
+  "posts": [
+    {
+      "name": "jay",
+      "email": "jay gandhi",
+      "id": 3
+    },
+    {
+      "name": "Jeel vaghani ",
+      "email": "bedeal2005@gmail.com",
+      "id": 4
+    },
+    {
+      "name": "Jeel vaghani ",
+      "email": "q@gmail.com",
+      "id": 5
+    }
+  ]
+}
