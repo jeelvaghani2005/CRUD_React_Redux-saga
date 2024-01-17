@@ -19,8 +19,6 @@ const initialState = {
 }
 
 const productReducer = (state = initialState, action) => {
-
-    console.log(action , "hfuug");
     switch (action.type) {
         case GET_PRODUCT_PROGRESS: {
             return {
