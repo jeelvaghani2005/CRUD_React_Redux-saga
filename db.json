@@ -1,7 +1,7 @@
 {
   "posts": [
     {
-      "name": "Jeel",
+      "name": "Jeel vaghani ",
       "email": " vaghani @gmail.com",
       "id": 1
     },
@@ -9,6 +9,11 @@
       "name": "q",
       "email": "q@gmail.com",
       "id": 2
+    },
+    {
+      "name": "jay ",
+      "email": "Gandhi ",
+      "id": 3
     }
   ]
 }

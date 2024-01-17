@@ -48,40 +48,94 @@ const Data1 = () => {
 
     return (
         <div>
-            <div>
-                <div>
-                    <input type="text" name="name" onChange={change} value={postdata.name} />
-                </div> 
-                <div>
-                    <input type="text" name="email" onChange={change} value={postdata.email} />
-                </div>
-                <div>
-                    <button onClick={submitData}>Submit</button>
-                </div>
-            </div>
-                <div>
-                    <h3>update data</h3>
-                <div>
-                    <input type="text" name="name" onChange={changeupdate} value={show.name} />
-                </div> 
-                <div>
-                    <input type="text" name="email" onChange={changeupdate} value={show.email} />
-                </div>
-                <div>
-                    <button onClick={EditData}>Edit</button>
-                </div>
-            </div>
-            
-            {data.product.map((e, index) => {
-                return (
-                    <div key={index}>
-                        <h1>{e.name}</h1>
-                        <h1>{e.email}</h1>
-                        <button onClick={()=>Deletedata(e.id)} >Delete</button>
-                        <button onClick={()=>Updatedata(e)} >Update</button>
+            <button type="button" class=" mt-5 btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    Add Data
+             </button>
+
+{/* modal */}
+
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div>
+                                <div>
+                                    <input className="form-control" placeholder="UserName" type="text" name="name" onChange={change} value={postdata.name} />
+                                </div>
+                                <div>
+                                    <input className="form-control mt-3 mb-3" placeholder="UserEmail" type="text" name="email" onChange={change} value={postdata.email} />
+                                </div>
+                                <div>
+                                    <button className="btn btn-success" data-bs-dismiss="modal" onClick={submitData}>Submit</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        </div>
                     </div>
-                );
-            })}
+                </div>
+            </div>
+            {/* show data */}
+            <table className="table mt-5" >
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                {data.product.map((e, index) => {
+                    return (
+                        <tbody key={index}>
+                            <tr>
+                                <td>{e.id}</td>
+                                <td>{e.name}</td>
+                                <td>{e.email}</td>
+                                <td>
+                                    <button className=" ms-2 btn btn-danger" onClick={() => Deletedata(e.id)} >Delete</button>
+                                    <button className=" ms-2 btn btn-success" data-bs-toggle="modal" data-bs-target="#updatemodal" onClick={() => Updatedata(e)} >Update</button>
+                                </td>
+                            </tr>
+
+                        </tbody>
+                    );
+                })}
+            </table>
+
+
+            <div class="modal fade" id="updatemodal" tabindex="-1" aria-labelledby="updatemodal" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div>
+                                <h3>Update Data</h3>
+                                <div>
+                                    <input type="text"  className="form-control mt-3" placeholder="UserName" name="name" onChange={changeupdate} value={show.name} />
+                                </div>
+                                <div>
+                                    <input type="text" className="form-control mb-2 mt-3" placeholder="UserEmail" name="email" onChange={changeupdate} value={show.email} />
+                                </div>
+                                <div>
+                                    <button className="btn btn-success" data-bs-dismiss="modal" onClick={EditData}>Edit</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
         </div>
     );
