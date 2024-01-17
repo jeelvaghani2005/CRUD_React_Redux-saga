@@ -81,7 +81,8 @@ const Data1 = () => {
                 </div>
             </div>
             {/* show data */}
-            <table className="table mt-5" >
+           <div className="container">
+           <table className="table mt-5" >
                 <thead>
                     <tr>
                         <th>ID</th>
@@ -107,6 +108,7 @@ const Data1 = () => {
                     );
                 })}
             </table>
+           </div>
 
 
             <div class="modal fade" id="updatemodal" tabindex="-1" aria-labelledby="updatemodal" aria-hidden="true">
